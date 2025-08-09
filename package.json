@@ -1,0 +1,35 @@
+{
+  "name": "codex-test-extension",
+  "displayName": "Codex Test Extension",
+  "description": "A minimal VS Code extension to verify installation and activation.",
+  "version": "0.0.1",
+  "publisher": "codex",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:codextest.helloWorld"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codextest.helloWorld",
+        "title": "Codex Test: Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && echo \"No tests\""
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
